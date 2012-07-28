@@ -14,6 +14,7 @@ module YamlConverters
     private
 
     def file_contents
+      # TODO: Allow fetching from different source
       @file_contents ||= File.read(@file_path)
     end
 
