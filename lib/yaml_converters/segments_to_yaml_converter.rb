@@ -1,11 +1,14 @@
 module YamlConverters
   class SegmentsToYamlConverter
-    def initialize(segments)
-      @segments = segments
+    def initialize(segments, yaml_writer = YamlConverters::YamlToStringWriter.new)
+      @segments    = segments
+      @yaml_writer = yaml_writer
     end
 
     def convert
-      Psych.dump(raw_yaml_hash)
+      @yaml_writer.write(Psych.dump(raw_yaml_hash))
+
+      @yaml_writer.result
     end
 
     private
