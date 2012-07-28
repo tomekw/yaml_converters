@@ -1,6 +1,6 @@
 # YamlConverters
 
-TODO: Write a gem description
+Convert YAML to segments and back
 
 ## Installation
 
@@ -19,6 +19,11 @@ Or install it yourself as:
 ## Usage
 
 TODO: Write usage instructions here
+
+## Acknowledgements
+
+Implementation of flattening a YAML file and generating a YAML file
+from key-value pairs taken (I hope, for now) from Tolk codebase.
 
 ## Contributing
 
