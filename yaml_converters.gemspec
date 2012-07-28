@@ -10,7 +10,7 @@ Gem::Specification.new do |gem|
   gem.email         = ['ja@jestem.tw']
   gem.description   = %q{Convert YAML to segments and back}
   gem.summary       = %q{Convert YAML to segments and back}
-  gem.homepage      = ''
+  gem.homepage      = 'https://github.com/tomekw/yaml_converters'
 
   gem.files         = `git ls-files`.split($/)
   gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
