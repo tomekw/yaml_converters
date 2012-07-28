@@ -1,11 +1,14 @@
 module YamlConverters
   class YamlToSegmentsConverter
-    def initialize(file_path)
-      @file_path = file_path
+    def initialize(file_path, segment_writer = YamlConverters::SegmentToHashWriter.new)
+      @file_path      = file_path
+      @segment_writer = segment_writer
     end
 
     def convert
-      @intermediate_flat_hash ||= flatten_hash(raw_yaml_hash)
+      flatten_hash(raw_yaml_hash)
+
+      @segment_writer.result
     end
 
     private
@@ -24,6 +27,7 @@ module YamlConverters
 
         if !value.is_a?(Hash)
           result[current_prefix] = value
+          @segment_writer.write({ current_prefix => value })
         else
           flatten_hash(value, current_prefix, result)
         end
