@@ -12,7 +12,7 @@ module YamlConverters
 
     def raw_yaml_hash
       @raw_yaml_hash ||= @segments.each_with_object({}) do |(key, value), raw_yaml_hash|
-        if key.include?('.')
+        if key.include?(YamlConverters::SEGMENT_KEY_DELIMITER)
           raw_yaml_hash.deep_merge!(unsquish(key, value))
         else
           raw_yaml_hash[key] = value
@@ -22,7 +22,7 @@ module YamlConverters
 
     def unsquish(string, value)
       if string.is_a?(String)
-        unsquish(string.split('.'), value)
+        unsquish(string.split(YamlConverters::SEGMENT_KEY_DELIMITER), value)
       elsif string.size == 1
         { string.first => value }
       else

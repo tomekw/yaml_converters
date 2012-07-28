@@ -5,4 +5,5 @@ require 'yaml_converters/yaml_to_segments_converter'
 require 'yaml_converters/segments_to_yaml_converter'
 
 module YamlConverters
+  SEGMENT_KEY_DELIMITER = '.'
 end

@@ -20,7 +20,7 @@ module YamlConverters
 
     def flatten_hash(hash, prefix = nil, result = {})
       hash.each do |key, value|
-        current_prefix = prefix ? "#{prefix}.#{key}" : key
+        current_prefix = prefix ? "#{prefix}#{YamlConverters::SEGMENT_KEY_DELIMITER}#{key}" : String(key)
 
         if !value.is_a?(Hash)
           result[current_prefix] = value
