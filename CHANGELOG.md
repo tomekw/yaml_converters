@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## Version 0.2 (unreleased)
+
+* Allow to read YAML file contents from a different source (file, AWS)
+
 ## Version 0.1 (2012-07-29)
 
 * Add CHANGELOG
