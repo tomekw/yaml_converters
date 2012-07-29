@@ -31,6 +31,22 @@ two public methods:
 Default `segment_writer` is an instance of
 `YamlConverters::SegmentToHashWriter` that returns a `Hash`.
 
+``` ruby
+module YamlConverters
+  class SegmentToHashWriter
+    attr_reader :result
+
+    def initialize
+      @result = {}
+    end
+
+    def write(key, value)
+      @result.deep_merge!({ key => value })
+    end
+  end
+end
+```
+
 Use `YamlConverters::SegmentsToYamlConverter#convert` to dump segments
 (key-value pairs) to YAML file.
 
@@ -43,6 +59,22 @@ two public methods:
 
 Default `yaml_writer` is an instance of
 `YamlConverters::YamlToStringWriter` that returns a `String`.
+
+``` ruby
+module YamlConverters
+  class YamlToStringWriter
+    attr_reader :result
+
+    def initialize
+      @result = ''
+    end
+
+    def write(yaml)
+      @result = yaml
+    end
+  end
+end
+```
 
 ## Acknowledgements
 
