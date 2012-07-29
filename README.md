@@ -16,6 +16,11 @@ Or install it yourself as:
 
     $ gem install yaml_converters
 
+Supported Ruby versions:
+
+* `1.9.3`
+* `1.9.2`
+
 ## Usage
 
 Use `YamlConverters::YamlToSegmentsConverter#convert` to split YAML file
