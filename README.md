@@ -127,6 +127,10 @@ end
 Implementation of flattening a YAML file and generating a YAML file
 from key-value pairs taken (I hope, for now) from Tolk codebase.
 
+## Warning
+
+Until version `1.0.0` is reached API may be changed without any notice!
+
 ## Contributing
 
 1. Fork it
