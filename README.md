@@ -25,7 +25,7 @@ You can pass custom `segment_writer` to dump generated segments
 somewhere (database, for example). Custom writer should respond to
 two public methods:
 
-* `write` - performs actual key-value pair dumping
+* `write(key, value)` - performs actual key-value pair dumping
 * `result` - returns whatever you want from `convert`
 
 Default `segment_writer` is an instance of
@@ -38,7 +38,7 @@ You can pass custom `yaml_writer` to dump generated YAML file
 somewhere (file, for example). Custom writer should respond to
 two public methods:
 
-* `write` - performs actual YAML string dumping
+* `write(yaml_string)` - performs actual YAML string dumping
 * `result` - returns whatever you want from `convert`
 
 Default `yaml_writer` is an instance of

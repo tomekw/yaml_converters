@@ -6,8 +6,8 @@ module YamlConverters
       @result = {}
     end
 
-    def write(hash)
-      @result.deep_merge!(hash)
+    def write(key, value)
+      @result.deep_merge!({ key => value })
     end
   end
 end

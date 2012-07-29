@@ -28,7 +28,7 @@ module YamlConverters
 
         if !value.is_a?(Hash)
           result[current_prefix] = value
-          @segment_writer.write({ current_prefix => value })
+          @segment_writer.write(current_prefix, value)
         else
           flatten_hash(value, current_prefix, result)
         end
