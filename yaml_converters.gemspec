@@ -20,6 +20,8 @@ Gem::Specification.new do |gem|
   gem.add_dependency('activesupport')
   gem.add_dependency('psych', '>= 1.3.3')
 
+  gem.add_development_dependency('growl')
+  gem.add_development_dependency('guard-rspec')
   gem.add_development_dependency('rake')
   gem.add_development_dependency('rspec')
   gem.add_development_dependency('simplecov')
