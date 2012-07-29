@@ -1,7 +1,7 @@
 module YamlConverters
   class YamlToSegmentsConverter
-    def initialize(file_path, segment_writer = YamlConverters::SegmentToHashWriter.new)
-      @file_path      = file_path
+    def initialize(yaml_reader, segment_writer = YamlConverters::SegmentToHashWriter.new)
+      @yaml_reader    = yaml_reader
       @segment_writer = segment_writer
     end
 
@@ -14,8 +14,7 @@ module YamlConverters
     private
 
     def file_contents
-      # TODO: Allow fetching from different source
-      @file_contents ||= File.read(@file_path)
+      @file_contents ||= @yaml_reader.read
     end
 
     def raw_yaml_hash
