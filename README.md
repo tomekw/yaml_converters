@@ -1,4 +1,4 @@
-# YamlConverters
+# YamlConverters  [![Build Status](https://secure.travis-ci.org/tomekw/yaml_converters.png)](http://travis-ci.org/tomekw/yaml_converters)
 
 Convert YAML to segments and back.
 
