@@ -1,6 +1,6 @@
 # CHANGELOG
 
-## Version 0.1 (unreleased)
+## Version 0.1 (2012-07-29)
 
 * Add CHANGELOG
 * Change API of `segment_writer` - provide key and value explicitly,
