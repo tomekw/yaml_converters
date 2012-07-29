@@ -26,6 +26,13 @@ Supported Ruby versions:
 Use `YamlConverters::YamlToSegmentsConverter#convert` to split YAML file
 into flat key-value pairs.
 
+``` ruby
+converter = YamlConverters::YamlToSegmentsConverter.new(
+  'path/to/file.yml', YamlConverters::SegmentToHashWriter.new
+)
+converter.convert # => { 'key' => 'value', ... }
+```
+
 You can pass custom `segment_writer` to dump generated segments
 somewhere (database, for example). Custom writer should respond to
 two public methods:
@@ -54,6 +61,13 @@ end
 
 Use `YamlConverters::SegmentsToYamlConverter#convert` to dump segments
 (key-value pairs) to YAML file.
+
+``` ruby
+converter = YamlConverters::SegmentsToYamlConverter(
+  { 'key' => 'value' }, YamlConverters::YamlToStringWriter.new
+)
+converter.convert # => "---\nkey: value\n"
+```
 
 You can pass custom `yaml_writer` to dump generated YAML file
 somewhere (file, for example). Custom writer should respond to
