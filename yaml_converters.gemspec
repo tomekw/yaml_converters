@@ -18,7 +18,7 @@ Gem::Specification.new do |gem|
   gem.require_paths = ['lib']
 
   gem.add_dependency('activesupport')
-  gem.add_dependency('psych')
+  gem.add_dependency('psych', '>= 1.3.3')
 
   gem.add_development_dependency('rake')
   gem.add_development_dependency('rspec')
