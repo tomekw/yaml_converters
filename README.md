@@ -23,12 +23,15 @@ Supported Ruby versions:
 
 ## Usage
 
+### Converting YAML into segments
+
 Use `YamlConverters::YamlToSegmentsConverter#convert` to split YAML file
 into flat key-value pairs.
 
 ``` ruby
+yaml_reader = YamlConverters::YamlFileReader.new('path/to/file.yml')
 converter = YamlConverters::YamlToSegmentsConverter.new(
-  'path/to/file.yml', YamlConverters::SegmentToHashWriter.new
+  yaml_reader, YamlConverters::SegmentToHashWriter.new
 )
 converter.convert # => { 'key' => 'value', ... }
 ```
@@ -58,6 +61,30 @@ module YamlConverters
   end
 end
 ```
+
+You can pass custom `yaml_reader` to read YAML file from
+a different source (AWS, for example). Custom reader should respond to
+one public method:
+
+* `read` - returns string containing YAML file contents
+
+Example `yaml_reader`:
+
+``` ruby
+module YamlConverters
+  class YamlFileReader
+    def initialize(file_path)
+      @file_path = file_path
+    end
+
+    def read
+      File.read(@file_path)
+    end
+  end
+end
+```
+
+### Converting segments into YAML
 
 Use `YamlConverters::SegmentsToYamlConverter#convert` to dump segments
 (key-value pairs) to YAML file.
