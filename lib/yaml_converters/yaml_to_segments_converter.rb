@@ -1,3 +1,5 @@
+require "psych"
+
 module YamlConverters
   class YamlToSegmentsConverter
     def initialize(yaml_reader, segment_writer = YamlConverters::SegmentToHashWriter.new)

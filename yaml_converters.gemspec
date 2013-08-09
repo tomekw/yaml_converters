@@ -11,6 +11,7 @@ Gem::Specification.new do |gem|
   gem.description   = %q{Convert YAML to segments and back}
   gem.summary       = %q{Convert YAML to segments and back}
   gem.homepage      = 'https://github.com/tomekw/yaml_converters'
+  gem.license       = 'MIT'
 
   gem.files         = `git ls-files`.split($/)
   gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }

@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe YamlConverters::YamlToSegmentsConverter do
   subject { described_class.new(yaml_reader) }
-  let(:yaml_reader) { stub(read: file_contents) }
+  let(:yaml_reader) { double(read: file_contents) }
 
   context 'simple one key-value pair file' do
     let(:file_contents) { "---\nkey: value\n" }
