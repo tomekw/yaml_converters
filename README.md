@@ -18,8 +18,8 @@ Or install it yourself as:
 
 Supported Ruby versions:
 
+* `2.0.0`
 * `1.9.3`
-* `1.9.2`
 
 ## Usage
 
